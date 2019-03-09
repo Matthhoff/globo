@@ -22,21 +22,21 @@ public class Troco {
 				showMenu();
 				bufferReader = new BufferedReader(new InputStreamReader(System.in));
 				String menu = bufferReader.readLine();
-				if (StringUtils.isNumeric(menu.trim())) {
+				if (StringUtils.isNumeric(menu)) {
 					switch (menu) {
 					case ("1"):
 						calculadora(bufferReader);
 						break;
 					case ("2"):
-						System.out.println("AtÈ logo!");
+						System.out.println("At√© logo!");
 						System.exit(0);
 						break;
 					default:
-						System.out.println("OpÁ„o inv·lida.");
+						System.out.println("Op√ß√£oo inv√°lida.");
 						break;
 					}
 				} else {
-					System.out.println("OpÁ„o inv·lida.");
+					System.out.println("Op√ß√£oo inv√°lida.");
 				}
 			}
 		} catch (Exception e) {
@@ -72,9 +72,9 @@ public class Troco {
 		BigDecimal troco = BigDecimal.ZERO;
 		if (valorTotal.compareTo(valorPago) <= 0) {
 			troco = valorPago.subtract(valorTotal);
-			System.out.println("O valor do troco È: R$" + (valorPago.subtract(valorTotal)));
+			System.out.println("O valor do troco √©: R$" + (valorPago.subtract(valorTotal)));
 		} else {
-			System.out.println("Valor pago È menor que valor total");
+			System.out.println("Valor pago √© menor que valor total");
 		}
 
 		distribuirTroco(troco);
@@ -132,7 +132,7 @@ public class Troco {
 
 	private static void showMenu() {
 		System.out.println("Menu:");
-		System.out.println("Digite \"1\" para novo c·lculo.");
+		System.out.println("Digite \"1\" para novo c√°lculo.");
 		System.out.println("Digite \"2\" para sair.");
 	}
 }

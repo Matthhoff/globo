@@ -4,7 +4,9 @@ plugins {
 }
 
 apply plugin: 'io.spring.dependency-management'
+apply plugin:'application'
 
+mainClassName = "br.com.selecaoglobocom.Troco"
 group = 'br.com.selecaoglobocom'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
@@ -19,4 +21,10 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	runtimeOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+task execute(type:JavaExec) {
+   main = mainClassName
+   classpath = sourceSets.main.runtimeClasspath
+   standardInput = System.in
 }
