@@ -8,6 +8,7 @@ Tecnologias
 * org.apache.commons commons-lang3 version 3.0
 
 Execucao:
-Abra um prompt de comando, vá até a raiz do projeto executar o seguinte comando:
-gradlew :execute
-Após siga as instruções para acessar a calculadora e digitar os valores.
+* Abra um prompt de comando
+* vá até a raiz do projeto e execute o seguinte comando:
+* gradlew :execute
+* Após siga as instruções para acessar a calculadora e digitar os valores.
