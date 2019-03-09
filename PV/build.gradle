@@ -1,0 +1,22 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.3.RELEASE'
+	id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'br.com.selecaoglobocom'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+
+	implementation 'org.springframework.boot:spring-boot-starter'
+	runtimeOnly 'org.springframework.boot:spring-boot-devtools'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
