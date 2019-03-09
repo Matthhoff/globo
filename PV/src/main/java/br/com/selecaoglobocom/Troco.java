@@ -9,11 +9,13 @@ import java.text.ParseException;
 import java.util.Locale;
 
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.boot.SpringApplication;
 
 public class Troco {
 	private static final String SAIR = "sair";
 
 	public static void main(String[] args) {
+		SpringApplication.run(Troco.class, args);
 		BufferedReader bufferReader = null;
 		try {
 			while (true) {
@@ -50,7 +52,7 @@ public class Troco {
 		}
 	}
 
-	private static void calculadora(BufferedReader bufferReader) {
+	public static void calculadora(BufferedReader bufferReader) {
 		BigDecimal valorTotal = BigDecimal.ZERO;
 		while (BigDecimal.ZERO.compareTo(valorTotal) == 0) {
 			valorTotal = solicitaValor(bufferReader, "valor total");
@@ -78,7 +80,7 @@ public class Troco {
 		distribuirTroco(troco);
 	}
 
-	private static void distribuirTroco(BigDecimal troco) {
+	public static void distribuirTroco(BigDecimal troco) {
 
 		int[] notas = { 100, 50, 20, 10, 5, 2 };
 
@@ -99,7 +101,7 @@ public class Troco {
 		}
 	}
 
-	private static BigDecimal verificaValor(BigDecimal troco, BigDecimal valor, String mensagem) {
+	public static BigDecimal verificaValor(BigDecimal troco, BigDecimal valor, String mensagem) {
 		BigDecimal trocoValor = troco.divide(valor);
 		if (trocoValor.compareTo(BigDecimal.ONE) >= 0) {
 			troco = troco.subtract(valor.multiply(BigDecimal.valueOf(trocoValor.intValue())));
@@ -108,7 +110,7 @@ public class Troco {
 		return troco;
 	}
 
-	private static BigDecimal solicitaValor(BufferedReader bufferReader, String tipoValor) {
+	public static BigDecimal solicitaValor(BufferedReader bufferReader, String tipoValor) {
 		System.out.println("Digite \"sair\" para sair da calculadora.");
 		System.out.println("Informe o " + tipoValor + ", conforme exemplo (R$ 40,10):");
 		String input = null;
