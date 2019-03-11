@@ -1,0 +1,12 @@
+4.1 - Análise de Problema e Solução
+Você recebeu como tarefa desenvolver um serviço que faça a integração com o serviço Random Profile (https://randomprofile.com). Os detalhes dessa API estão descritos em https://randomprofile.com/api-for-developers.
+
+Este serviço tem 2 métodos: um GET que retorna um perfil e um POST que salva um novo perfil. Neste primeiro desafio, você deve apresentar uma descrição ou um desenho (nada de código por enquanto!) de como você acha que deveria ser esta solução.
+
+Uma dica: NESTE PRIMEIRO DESAFIO, este serviço pode prever algumas premissas como validações, timeout, re-tentativa, tratamento de erros, etc.
+
+API JAVA RESTFUL
+* Validação através de hibernate validator para verificar os dados de input.
+* Swagger para documentação da API
+* Feign para otimizar a integração com a API randomprofile e também realizar o tratamento de erros através do decoder
+* NetFlix Hystrix - configuração timeout, re-tentativas e tolerância de falhas

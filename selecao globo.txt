@@ -1,0 +1,81 @@
+Desafio Técnico para Seleção Globo.com
+Desenvolvedor BackEnd - Integração
+Considerações Gerais
+A escolha da linguagem é deixada para você, utilize a que você se sente mais confortável. A entrada deverá ser por STDIN (standard input) e a saída por STDOUT (standard output) na linguagem que você escolher.
+
+Forneça as instruções de instalação e execução do seu sistema, observaremos principalmente seu design de código. Aspectos como coesão, baixo acoplamento, testabilidade e legibilidade são os principais pontos.
+
+Escolha ao menos dois dos desafios abaixo para resolver de acordo com o seu perfil. Quanto mais dados tivermos para analisar, melhor para o candidato. Caso já tenha participado do processo seletivo, por favor escolha um desafio diferente do que foi feito anteriormente.
+
+1 - Decode URL
+Dada uma URL, desenvolva um programa que indique se a URL é válida ou não e, caso seja válida, retorne as suas partes constituintes.
+
+Exemplos
+
+Entrada: https://globoesporte.globo.com/
+Saída
+protocolo: https
+host: globoesporte
+domínio: globo.com
+Entrada: http://www.google.com/mail/user=fulano
+Saída
+protocolo: http
+host: www
+domínio: google.com
+path: mail
+parâmetros: user=fulano
+Entrada: ssh://fulano%senha@git.com/
+Saída
+protocolo: ssh
+usuário: fulano
+senha: senha
+dominio: git.com
+2 - Intervalo de Números
+Dado uma lista de números inteiros, agrupe a lista em um conjunto de intervalos
+
+Exemplo:
+
+Entrada: 100, 101, 102, 103, 104, 105, 110, 111, 113, 114, 115, 150
+Saída: [100-105], [110-111], [113-115], [150]
+3 - Troco
+Funcionários de empresas comerciais que trabalham como caixa tem uma grande responsabilidade em suas mãos. A maior parte do tempo de seu expediente de trabalho é gasto recebendo valores de clientes e, em alguns casos, fornecendo troco.
+
+Seu desafio é fazer um programa que leia o valor total a ser pago e o valor efetivamente pago, respondendo o valor do troco e o menor número de cédulas e moedas que devem ser fornecidas.
+
+Deve-se considerar que há:
+
+cédulas de R$ 100,00, R$ 50,00, R$ 20,00, R$ 10,00, R$ 5,00 e R$ 2,00;
+moedas de R$ 1,00, R$ 0,50, R$ 0,25, R$ 0,10, R$ 0,05.
+Exemplos:
+
+Valor a ser pago: R$25,00
+Valor efetivamente pago: R$40,00
+Troco: R$15,00
+1 x R$ 10,00
+1 x R$ 5,00
+Valor a ser pago: R$35,80
+Valor efetivamente pago: R$50,00
+Troco: R$14,20
+1 x R$ 10,00
+2 x R$ 2,00
+2 x R$ 0,20
+Valor a ser pago: R$40,00
+Valor efetivamente pago: R$40,00
+Troco: R$ 0
+4.1 - Análise de Problema e Solução
+Você recebeu como tarefa desenvolver um serviço que faça a integração com o serviço Random Profile (https://randomprofile.com). Os detalhes dessa API estão descritos em https://randomprofile.com/api-for-developers.
+
+Este serviço tem 2 métodos: um GET que retorna um perfil e um POST que salva um novo perfil. Neste primeiro desafio, você deve apresentar uma descrição ou um desenho (nada de código por enquanto!) de como você acha que deveria ser esta solução.
+
+Uma dica: NESTE PRIMEIRO DESAFIO, este serviço pode prever algumas premissas como validações, timeout, re-tentativa, tratamento de erros, etc.
+
+4.2 - Programação da Solução
+Usando o desafio acima, desenvolva o método GET da sua proposta.
+
+Neste segundo desafio pode fazer apenas a integração do serviço, o caminho feliz, pega-lá-dá-cá. Não precisa se preocupar com re-tentativas, tratamento de erros, etc. Somente o caminho feliz!
+
+Após terminar, commite o seu código.
+
+Outra dica: nós iremos avaliar a estrutura do seu código e como você se mantem focado no que foi pedido. Cuide da estrutura, entregue com qualidade!
+
+Para este desafio será necessário um descritivo de como funciona a sua API, como levantar este serviço e como procerder com as chamadas.
