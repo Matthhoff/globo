@@ -1,10 +1,7 @@
 package br.com.selecaoglobocom.api;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,8 +13,6 @@ import br.com.selecaoglobocom.service.PerfilService;
 @RequestMapping("/perfil")
 public class PerfilApi {
 
-	private Logger log = LoggerFactory.getLogger(PerfilApi.class);
-
 	private PerfilService perfilService;
 
 	@Autowired
@@ -26,10 +21,14 @@ public class PerfilApi {
 	}
 
 	@GetMapping(path = "")
-	public ResponseEntity<String> getOriginationStatus(@RequestParam String countries)
+	public ResponseEntity<String> buscarPerfis(@RequestParam(required=true) String countries,
+			@RequestParam(required=false) String format,
+			@RequestParam(required=false) String packages,
+			@RequestParam(required=false) Integer fromAge,
+			@RequestParam(required=false) Integer toAge,
+			@RequestParam(required=false) Integer fullChildren)
 			throws Exception {
-		log.info("Get profiles from input data");
-		String perfis = perfilService.buscarProfiles(countries);
+		String perfis = perfilService.buscarProfiles(countries, format, packages, fromAge, toAge, fullChildren);
 		return ResponseEntity.ok(perfis);
 	}
 

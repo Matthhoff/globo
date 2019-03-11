@@ -8,6 +8,7 @@ Tecnologias
 * org.apache.commons commons-lang3 version 3.0
 
 Execucao:
+* Tenha o pacote JDK instalado
 * Abra um prompt de comando
 * vá até a raiz do projeto e execute o seguinte comando:
 * gradlew :execute

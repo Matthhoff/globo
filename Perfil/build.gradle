@@ -12,6 +12,7 @@ apply plugin: 'io.spring.dependency-management'
 group = 'br.com.selecaoglobocom'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
+mainClassName = 'br.com.selecaoglobocom.PerfilApplication'
 
 repositories {
 	mavenCentral()
@@ -26,8 +27,9 @@ dependencies {
 	runtime('org.springframework.boot:spring-boot-devtools')
 	compile("org.springframework.boot:spring-boot-starter")
 	compile('org.springframework.boot:spring-boot-starter-web')
-	compile('org.springframework.cloud:spring-cloud-starter-netflix-hystrix')
 	compile('org.springframework.cloud:spring-cloud-starter-openfeign')
+	compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
+	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
@@ -35,4 +37,9 @@ dependencyManagement {
 	imports {
 		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
 	}
+}
+
+task execute(type:JavaExec) {
+   main = mainClassName
+   classpath = sourceSets.main.runtimeClasspath
 }
